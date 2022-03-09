@@ -1,0 +1,77 @@
+
+
+<div class="container">
+    <h3>Task list</h3>
+   
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Select:
+            </th>
+        <th>
+            Task Id
+        </th>
+        <th>
+            Task Name
+        </th>
+        <th>
+            Task Description
+        </th>
+        
+    </tr>
+    <form [formGroup]="updateForm" >
+        <div class="form-group">
+  <tbody *ngIf="inputData.length">
+    
+      <tr *ngFor="let doc of inputData">
+        
+        <td>
+           
+            <button class="btn btn-primary" (click)="onUpdate(doc.tid,doc.tname,doc.tdesc)">Update task</button>
+                
+        </td>
+       
+        <ng-container *ngIf="tempTid==0; else editTask">
+        <td>
+        {{doc.tid}}
+           </td>
+           </ng-container>
+           <ng-template #editTask>
+           <td>
+            <input type="text"  formControlName="itemId" class="form-control" value="">
+           </td>
+           </ng-template>
+           <ng-container *ngIf="tempTid==0; else editTask">
+        <td>{{doc.tname}} </td>
+</ng-container>
+<ng-template #editTask>
+<td> <input type="text"  formControlName="itemName" class="form-control" value=""></td>
+</ng-template>
+        <ng-container *ngIf="tempTid==0; else editTask">
+        <td>{{doc.tdesc}} </td>
+
+    </ng-container>
+    <ng-template #editTask>
+        <td><input type="text"  formControlName="itemDesc" class="form-control" value=""></td>
+</ng-template>
+
+       </tr> 
+    
+    
+   
+        
+        
+            
+      
+    
+      
+    
+      
+    </tbody>
+</div>
+</form>
+    </table>
+   
+
+  </div>
+

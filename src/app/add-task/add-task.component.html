@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h1>Add new task to your TO DOs</h1>
+    <div class="container">
+        <div class="row">
+            <form [formGroup]="addForm" >
+                <div class="form-group">
+                    <label>Task ID</label>
+                    <input type="text"  formControlName="itemid" class="form-control">
+                    <label>Task Name</label>
+                    <input type="text"  formControlName="itemname" class="form-control">
+                    <label>Task Description</label>
+                    <input type="text"  formControlName="itemdesc" class="form-control">
+                   <br>
+                 
+                    <div class="form-group">
+                        <button class="btn btn-primary" (click)="onSubmit()">Add Task</button>
+                    </div>
+                    </div>
+                    </form>
+                    </div>
+    </div>
+</div>

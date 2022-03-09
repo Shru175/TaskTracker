@@ -1,0 +1,28 @@
+
+
+<div class="container">
+  <h3>Task list</h3>
+  <table class="table table-bordered">
+      <tr>
+      <th class="theader">
+          Task Id
+      </th>
+      <th class="theader">
+
+          Task Name
+      </th>
+      <th class="theader">
+
+          Task Description
+      </th>
+      
+  </tr>
+<tbody *ngIf="inputData.length">
+    <tr *ngFor="let doc of inputData">
+      <td> {{doc.tid}}</td>
+      <td> {{doc.tname}}</td>
+      <td> {{doc.tdesc}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

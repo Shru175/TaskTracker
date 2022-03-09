@@ -1,0 +1,38 @@
+
+
+<div class="container">
+    <h3>Task list</h3>
+    <form [formGroup]="deleteform" >
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Select:
+            </th>
+        <th>
+            Task Id
+        </th>
+        <th>
+            Task Name
+        </th>
+        <th>
+            Task Description
+        </th>
+        
+    </tr>
+  <tbody *ngIf="inputData.length">
+      <tr *ngFor="let doc of inputData">
+        <td>
+           
+            <button class="btn btn-primary" (click)="onDelete(doc.tid)">Delete task</button>
+                
+        </td>
+        <td> {{doc.tid}}</td>
+        <td> {{doc.tname}}</td>
+        <td> {{doc.tdesc}}</td>
+      </tr>
+    </tbody>
+    </table>
+   
+</form>
+  </div>
+
